@@ -1,0 +1,69 @@
+body {
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    color: #333; /* texte par défaut */
+}
+
+/* Tête de page */
+header.header {
+    display: flex;
+    align-items: center;
+}
+
+header.header img {
+    width: 150px;
+}
+
+section.top-page {
+    background-color: #b1ceb2; /* fond clair */
+    background-size: cover;
+    height: 20vh;
+    padding: 25px;
+}
+
+/* Menu de navigation */
+nav.nav-accueil ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav.nav-accueil li {
+    margin-left: 20px;
+}
+
+nav.nav-accueil a {
+    text-decoration: none;
+    color: black; /* ou blanc si fond sombre */
+    font-weight: bold;
+}
+
+/* Pied de page */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/* 🌙 Mode sombre (automatique si le navigateur est en dark mode) */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #121212;
+        color: #f4f4f4;
+    }
+
+    section.top-page {
+        background-color: #2e4630; /* vert foncé adapté au mode sombre */
+    }
+
+    nav.nav-accueil a {
+        color: #f4f4f4;
+    }
+
+    footer {
+        background-color: #1e1e1e;
+        color: #f4f4f4;
+    }
+}
