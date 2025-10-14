@@ -1,70 +1,106 @@
-body {
-    margin: 0 auto;
-    font-family: Arial, sans-serif;
-    color: #333; /* texte par défaut */
-}
+/* --- Base du site --- */
+    body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    }
 
-/* Tête de page */
-header.header {
-    display: flex;
-    align-items: center;
-}
-
-header.header img {
-    width: 150px;
-}
-
-section.top-page {
-    /* background-color: #b1ceb2; /* fond clair */
-    background-color: #bacfad;
+/* --- Section supérieure --- */
+    section.top-page {
+    background-color: #bacfad; /* vert clair cohérent */
     background-size: cover;
-    height: 20vh;
+    height: 15vh;
     padding: 25px;
-}
+    }
 
-/* Menu de navigation */
-nav.nav-accueil ul {
+/* --- Menu de navigation --- */
+    nav.nav-accueil ul {
     display: flex;
     list-style: none;
     padding: 0;
     margin: 0;
-}
+    }
 
-nav.nav-accueil li {
+    nav.nav-accueil li {
     margin-left: 20px;
-}
+    }
 
-nav.nav-accueil a {
+    nav.nav-accueil a {
     text-decoration: none;
-    color: black; /* ou blanc si fond sombre */
+    color: black;
     font-weight: bold;
-}
+    transition: color 0.3s;
+    }
 
-/* Pied de page */
-footer {
+    nav.nav-accueil a:hover {
+    color: #2c7a4b; /* vert au survol */
+    }
+
+/* --- Section présentation / mon histoire --- */
+    .presentation {
+    padding: 60px 20px;
+    max-width: 850px;
+    margin: 60px auto;
+    background: white;
+    border-radius: 16px;
+    padding: 40px 50px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    line-height: 1.7;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .presentation h2 {
+    text-align: center;
+    color: #2c7a4b; /* vert principal du site */
+    font-size: 2rem;
+    margin-bottom: 25px;
+    }
+
+    .presentation p {
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+    }
+
+    .presentation ul {
+    margin: 15px 0 25px 25px;
+    }
+
+    .presentation li {
+    margin-bottom: 10px;
+    }
+
+    strong {
+    color: #1a1a1a;
+    }
+
+/* --- Mode responsive --- */
+    @media (max-width: 600px) {
+    .presentation {
+        padding: 25px 20px;
+        margin: 30px 10px;
+    }
+
+    .presentation h2 {
+        font-size: 1.6rem;
+    }
+    }
+
+/* --- En-tête --- */
+    header.header {
+    display: flex;
+    align-items: center;
+    }
+
+    header.header img {
+    width: 150px;
+    }
+
+/* --- Pied de page --- */
+    footer {
     background-color: #333;
     color: white;
     text-align: center;
     padding: 10px;
-}
-
-/* 🌙 Mode sombre (automatique si le navigateur est en dark mode) */
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: #121212;
-        color: #f4f4f4;
+    font-size: 0.9rem;
     }
-
-    section.top-page {
-        background-color: #2e4630; /* vert foncé adapté au mode sombre /
-    }
-
-    nav.nav-accueil a {
-        color: #f4f4f4;
-    }
-
-    footer {
-        background-color: #1e1e1e;
-        color: #f4f4f4;
-    }
-}
