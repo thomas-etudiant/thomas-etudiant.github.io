@@ -48,7 +48,7 @@ footer {
     padding: 10px;
 }
 
-/* 🌙 Mode sombre (automatique si le navigateur est en dark mode) /
+/* 🌙 Mode sombre (automatique si le navigateur est en dark mode) */
 @media (prefers-color-scheme: dark) {
     body {
         background-color: #121212;
@@ -68,4 +68,3 @@ footer {
         color: #f4f4f4;
     }
 }
-*/
