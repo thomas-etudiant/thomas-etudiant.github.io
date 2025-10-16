@@ -74,6 +74,32 @@
     color: #1a1a1a;
     }
 
+/* --- vidéo Youtube --- */
+
+    .video-section {
+    text-align: center;
+    margin: 40px auto;
+    max-width: 800px;
+    }
+
+    .video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* ratio 16:9 */
+    height: 0;
+    }
+
+    .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
 /* --- Mode responsive --- */
     @media (max-width: 600px) {
     .presentation {
