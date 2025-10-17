@@ -8,10 +8,13 @@
 
 /* --- Section supérieure --- */
     section.top-page {
-    background-color: #bacfad; /* vert clair cohérent */
-    background-size: cover;
-    height: 15vh;
-    padding: 25px;
+      background-color: #bacfad;
+      background-size: cover;
+      padding: 25px;
+      min-height: 15vh; /* remplace height par min-height */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
 /* --- Menu de navigation --- */
@@ -131,24 +134,14 @@
     font-size: 0.9rem;
     }
     
-/* --- Correction du chevauchement sur mobile --- */
-    @media (max-width: 768px) {
-      section.top-page {
-        height: auto; /* évite une hauteur trop petite sur téléphone */
-        padding: 40px 20px; /* plus d’espace intérieur */
-      }
     
-      .presentation {
-        margin-top: 40px; /* ajoute de l’espace sous le header/menu */
-      }
-    
-      nav.nav-accueil ul {
-        flex-direction: column; /* empile les liens si besoin */
-        align-items: center;
-        gap: 10px;
-      }
-    
-      nav.nav-accueil li {
-        margin-left: 0;
-      }
-    }
+@media (max-width: 768px) {
+  section.top-page {
+    min-height: 25vh; /* plus de place sur mobile */
+    padding: 40px 20px;
+  }
+
+  .presentation {
+    margin-top: 60px; /* espace sous le header */
+  }
+}
