@@ -130,3 +130,25 @@
     padding: 10px;
     font-size: 0.9rem;
     }
+    
+/* --- Correction du chevauchement sur mobile --- */
+    @media (max-width: 768px) {
+      section.top-page {
+        height: auto; /* évite une hauteur trop petite sur téléphone */
+        padding: 40px 20px; /* plus d’espace intérieur */
+      }
+    
+      .presentation {
+        margin-top: 40px; /* ajoute de l’espace sous le header/menu */
+      }
+    
+      nav.nav-accueil ul {
+        flex-direction: column; /* empile les liens si besoin */
+        align-items: center;
+        gap: 10px;
+      }
+    
+      nav.nav-accueil li {
+        margin-left: 0;
+      }
+    }
