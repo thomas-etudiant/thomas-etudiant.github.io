@@ -122,7 +122,7 @@
     }
 
     header.header img {
-    width: 75px;
+    width: 150px;
     }
 
 /* --- Pied de page --- */
@@ -132,7 +132,6 @@
     text-align: center;
     padding: 10px;
     font-size: 0.9rem;
-
     }
     
     
@@ -146,23 +145,3 @@
     margin-top: 60px; /* espace sous le header */
   }
 }
-
-/* --- Correction du menu sur téléphone --- */
-@media (max-width: 768px) {
-  nav.nav-accueil ul {
-    flex-direction: column; /* empile les liens */
-    align-items: center; /* centre les éléments */
-    justify-content: center;
-    gap: 10px; /* espace entre les liens */
-  }
-
-  nav.nav-accueil li {
-    margin: 5px 0; /* retire le margin-left horizontal */
-  }
-
-  section.top-page {
-    height: auto; /* laisse la section s’adapter à la taille du contenu */
-    padding: 20px; /* un peu d’air autour */
-  }
-}
-
