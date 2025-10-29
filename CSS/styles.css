@@ -1,147 +1,201 @@
 /* --- Base du site --- */
     body {
-    margin: 0;
-    font-family: "Poppins", sans-serif;
-    background-color: #f8f9fa;
-    color: #333;
-    }
-
-/* --- Section supérieure --- */
-    section.top-page {
-      background-color: #bacfad;
-      background-size: cover;
-      padding: 25px;
-      min-height: 15vh; /* remplace height par min-height */
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-/* --- Menu de navigation --- */
-    nav.nav-accueil ul {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    }
-
-    nav.nav-accueil li {
-    margin-left: 20px;
-    }
-
-    nav.nav-accueil a {
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-    transition: color 0.3s;
-    }
-
-    nav.nav-accueil a:hover {
-    color: #2c7a4b; /* vert au survol */
-    }
-
-/* --- Section présentation / mon histoire --- */
-    .presentation {
-    padding: 60px 20px;
-    max-width: 850px;
-    margin: 60px auto;
-    background: white;
-    border-radius: 16px;
-    padding: 40px 50px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-    line-height: 1.7;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    }
-
-    .presentation h2 {
-    text-align: center;
-    color: #2c7a4b; /* vert principal du site */
-    font-size: 2rem;
-    margin-bottom: 25px;
-    }
-
-    .presentation p {
-    margin-bottom: 15px;
-    font-size: 1.05rem;
-    }
-
-    .presentation ul {
-    margin: 15px 0 25px 25px;
-    }
-
-    .presentation li {
-    margin-bottom: 10px;
-    }
-
-    strong {
-    color: #1a1a1a;
-    }
-
-/* --- vidéo Youtube --- */
-
-    .video-section {
-    text-align: center;
-    margin: 40px auto;
-    max-width: 800px;
-    }
-
-    .video-container {
-    position: relative;
-    width: 100%;
-    padding-bottom: 56.25%; /* ratio 16:9 */
-    height: 0;
-    }
-
-    .video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
-
-/* --- Mode responsive --- */
-    @media (max-width: 600px) {
-    .presentation {
-        padding: 25px 20px;
-        margin: 30px 10px;
-    }
-
-    .presentation h2 {
-        font-size: 1.6rem;
-    }
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        background-color: #f8f9fa;
+        color: #333;
     }
 
 /* --- En-tête --- */
     header.header {
-    display: flex;
-    align-items: center;
+        display: flex;
+        align-items: center;
+    }
+    /* --- Logo du site --- */
+        header.header img {
+            width: 75px;
+        }
+
+/* --- Section supérieure --- */
+    section.top-page {
+        background-color: #bacfad;
+        background-size: cover;
+        padding: 25px;
+        min-height: 15vh; /* remplace height par min-height */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
-    header.header img {
-    width: 150px;
+/* --- Menu de navigation --- */
+    nav.nav-accueil ul {
+        display: flex;
+        flex-wrap: wrap; /* Permet le retour à la ligne */
+        justify-content: left; /* Enplacement du texte de navigation */
+        align-items: center;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        gap: 5px; /* Espace uniforme entre les liens */
+    }
+
+    nav.nav-accueil li {
+        margin-left: 20px;
+    }
+
+    nav.nav-accueil a {
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+        transition: color 0.3s;
+    }
+
+    nav.nav-accueil a:hover {
+        color: #2c7a4b; /* vert au survol */
+    }
+
+    @media (max-width: 768px) {
+        section.top-page {
+            min-height: 0vh; /* plus de place sur mobile */
+            padding: 15px;
+        }
+
+        .presentation {
+            margin-top: 20px; /* espace sous le header */
+        }
+    }
+
+/* --- Section présentation / mon histoire --- */
+    .presentation {
+        padding: 60px 20px;
+        max-width: 850px;
+        margin: 60px auto;
+        background: white;
+        border-radius: 16px;
+        padding: 40px 50px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        line-height: 1.7;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .presentation h2 {
+        text-align: center;
+        color: #2c7a4b; /* vert principal du site */
+        font-size: 2rem;
+        margin-bottom: 25px;
+    }
+
+    .presentation p {
+        margin-bottom: 15px;
+        font-size: 1.05rem;
+    }
+
+    .presentation ul {
+        margin: 15px 0 25px 25px;
+    }
+
+    .presentation li {
+        margin-bottom: 10px;
+    }
+
+    strong {
+        color: #1a1a1a;
+    }
+
+/* ---  Section photo ---*/
+    /*-- (version PC) --*/
+        .photo {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;/* Espace entre les photo */
+            padding: 20px;
+        }
+
+        .photo img {
+            width: 100%;
+            height: auto; /* garde les proportion */
+            border-radius: 8px;
+            display: block;
+            object-fit: cover;/* empeche le déformement */
+        }
+
+        .photo figure {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+            /*- Style de la légende -*/
+            .photo figcaption {
+                margin-top: 8px;
+                font-size: 0.9rem;
+                color: #333;
+                text-align: center;
+                font-style: italic;
+            }
+    /*-- (version Mobile) --*/
+            @media (max-width: 600px) {
+                .photo {
+                    display: flex;
+                    overflow-x: auto; /* defilement horizontal */
+                    gap: 15px;
+                    scroll-snap-type: x mandatory;
+                    padding: 10px;
+                }
+
+                .photo figure {
+                    flex: 0 0 80%; /* largeur de chaque image */
+                    scroll-snap-align: center; /* Pas d'aplatissement */
+                }
+                /* Cache la barre de scroll */
+                .photo::-webkit-scrollbar {
+                    display: none;
+                }
+            }
+
+/* --- vidéo Youtube --- */
+    .video-section {
+        text-align: center;
+        margin: 40px auto;
+        max-width: 800px;
+    }
+
+    .video-container {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* ratio 16:9 */
+        height: 0;
+    }
+
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+/* --- Mode responsive --- */
+   @media (max-width: 768px) {
+        nav.nav-accueil a {
+                font-size: 0.95rem; /* texte un peu plus petit */
+            }
+
+            section.top-page {
+                height: auto; /* laisse de la place pour les retours à la ligne */
+                padding: 20px;
+            }
     }
 
 /* --- Pied de page --- */
     footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    font-size: 0.9rem;
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        font-size: 0.9rem;
     }
-    
-    
-@media (max-width: 768px) {
-  section.top-page {
-    min-height: 25vh; /* plus de place sur mobile */
-    padding: 40px 20px;
-  }
-
-  .presentation {
-    margin-top: 60px; /* espace sous le header */
-  }
-}
