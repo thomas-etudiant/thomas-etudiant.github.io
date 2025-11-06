@@ -1,0 +1,7 @@
+    git status                                      <*-- Voir le stutus des fichiers -->
+
+    git add .                                       <*-- Selction des fichiers -->
+
+    git commit -m "modification portfolio photo"    <*-- Nom de la modification -->
+
+    git push                                        <*-- Envoi des fichiers sur le serveur -->

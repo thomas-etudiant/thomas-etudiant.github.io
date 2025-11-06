@@ -21,7 +21,7 @@
         background-color: #bacfad;
         background-size: cover;
         padding: 25px;
-        min-height: 15vh; /* remplace height par min-height */
+        min-height: 15vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -104,9 +104,29 @@
 
 /* ---  Section photo ---*/
     /*-- (version PC) --*/
+        .Titre_Section_photo {
+            padding: 60px 20px;
+            max-width: 850px;
+            margin: 60px auto;
+            background: white;
+            border-radius: 16px;
+            padding: 40px 50px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            line-height: 0;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .Titre_Section_photo h1{
+            text-align: center;
+            color: #2c7a4b; /* vert principal du site */
+            font-size: 5rem;
+            margin-bottom: 20px;
+        }
+
+
         .photo {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;/* Espace entre les photo */
             padding: 20px;
         }
@@ -142,6 +162,10 @@
                     gap: 15px;
                     scroll-snap-type: x mandatory;
                     padding: 10px;
+                }
+
+                .photo {
+                    height: auto;
                 }
 
                 .photo figure {
