@@ -101,7 +101,33 @@
     strong {
         color: #1a1a1a;
     }
+    /* Optimisation mobile */
+        @media (max-width: 768px) {
+            .presentation header {
+                padding: 10px 15px;
+            }
 
+            .presentation nav a {
+                display: inline-block;
+                margin: 3px 6px;
+                font-size: 0.9rem;
+            }
+
+            .presentation h1, h2 {
+                font-size: 1.3rem;
+                margin: 10px 0;
+            }
+
+            .presentation p {
+                font-size: 1rem;
+                line-height: 1.5;
+                margin: 5px 15px;
+            }
+
+            .presentation section {
+                padding: 10px 15px;
+            }
+        }
 /* ---  Section photo ---*/
     /*-- (version PC) --*/
         .Titre_Section_photo {
