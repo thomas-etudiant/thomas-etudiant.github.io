@@ -2,7 +2,7 @@
     body {
         margin: 0;
         font-family: "Poppins", sans-serif;
-        background-color: #f8f9fa;
+        background-color: #Daded8; /*Couleur vert clair #f8f9fa */
         color: #333;
     }
 
@@ -18,7 +18,7 @@
 
 /* --- Section supérieure --- */
     section.top-page {
-        background-color: #bacfad;
+        background-color: #768064; /*#bacfad*/
         background-size: cover;
         padding: 25px;
         min-height: 15vh;
@@ -70,6 +70,7 @@
         padding: 60px 20px;
         max-width: 850px;
         margin: 60px auto;
+        color: #333;
         background: white;
         border-radius: 16px;
         padding: 40px 50px;
@@ -98,6 +99,11 @@
         margin-bottom: 10px;
     }
 
+    .presentation br {
+        margin-bottom: 0px;
+        font-size: 1.05rem;
+    }
+
     strong {
         color: #1a1a1a;
     }
@@ -122,6 +128,10 @@
                 font-size: 1rem;
                 line-height: 1.5;
                 margin: 5px 15px;
+            }
+
+            .presentation br {
+                margin: 10px;
             }
 
             .presentation section {
