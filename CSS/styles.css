@@ -141,12 +141,11 @@
 /* ---  Section photo ---*/
     /*-- (version PC) --*/
         .Titre_Section_photo {
-            padding: 60px 20px;
+            padding: 10px 50px;
             max-width: 850px;
             margin: 60px auto;
             background: white;
             border-radius: 16px;
-            padding: 40px 50px;
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
             line-height: 0;
             transition: background-color 0.3s ease, color 0.3s ease;
@@ -156,7 +155,7 @@
             text-align: center;
             color: #2c7a4b; /* vert principal du site */
             font-size: 5rem;
-            margin-bottom: 20px;
+            margin-bottom: 50px;
         }
 
 
