@@ -14,6 +14,9 @@
     /* --- Logo du site --- */
         header.header img {
             width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            object-fit: cover;
         }
 
 /* --- Section supérieure --- */
