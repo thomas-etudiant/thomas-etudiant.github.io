@@ -7,12 +7,12 @@
     }
 
 /* --- En-tête --- */
-    header.header {
+    .header {
         display: flex;
         align-items: center;
     }
-    /* --- Logo du site --- */
-        header.header img {
+    /* --- Logo du site [Ma photo]--- */
+        .header img {
             width: 75px;
             height: 75px;
             border-radius: 50%;
@@ -31,7 +31,7 @@
     }
 
 /* --- Menu de navigation --- */
-    nav.nav-accueil ul {
+    .nav-accueil ul {
         display: flex;
         flex-wrap: wrap; /* Permet le retour à la ligne */
         justify-content: left; /* Enplacement du texte de navigation */
@@ -42,18 +42,18 @@
         gap: 5px; /* Espace uniforme entre les liens */
     }
 
-    nav.nav-accueil li {
+    .nav-accueil li {
         margin-left: 20px;
     }
 
-    nav.nav-accueil a {
+    .nav-accueil a {
         text-decoration: none;
         color: black;
         font-weight: bold;
         transition: color 0.3s;
     }
 
-    nav.nav-accueil a:hover {
+    .nav-accueil a:hover {
         color: #2c7a4b; /* vert au survol */
     }
 
@@ -68,8 +68,8 @@
         }
     }
 
-/* --- Section présentation / mon histoire --- */
-    .presentation {
+/* --- Section présentation / À propos --- */
+    .text {
         padding: 60px 20px;
         max-width: 850px;
         margin: 60px auto;
@@ -82,27 +82,28 @@
         transition: background-color 0.3s ease, color 0.3s ease;
     }
 
-    .presentation h2 {
+    .text h2 {
         text-align: center;
         color: #2c7a4b; /* vert principal du site */
         font-size: 2rem;
+        margin-top: auto;
         margin-bottom: 25px;
     }
 
-    .presentation p {
+    .text p {
         margin-bottom: 15px;
-        font-size: 1.05rem;
+        font-size: 1.05rem; /* Taille du text */
     }
 
-    .presentation ul {
+    .text ul {
         margin: 15px 0 25px 25px;
     }
 
-    .presentation li {
+    .text li {
         margin-bottom: 10px;
     }
 
-    .presentation br {
+    .text br {
         margin-bottom: 0px;
         font-size: 1.05rem;
     }
@@ -112,32 +113,35 @@
     }
     /* Optimisation mobile */
         @media (max-width: 768px) {
-            .presentation header {
+            .text {
+                padding: 20px 25px;
+            }
+            .text header {
                 padding: 10px 15px;
             }
 
-            .presentation nav a {
+            .text nav a {
                 display: inline-block;
                 margin: 3px 6px;
                 font-size: 0.9rem;
             }
 
-            .presentation h1, h2 {
+            .text h1, h2 {
                 font-size: 1.3rem;
                 margin: 10px 0;
             }
 
-            .presentation p {
+            .text p {
                 font-size: 1rem;
                 line-height: 1.5;
                 margin: 5px 15px;
             }
 
-            .presentation br {
+            .text br {
                 margin: 10px;
             }
 
-            .presentation section {
+            .text section {
                 padding: 10px 15px;
             }
         }
@@ -150,15 +154,15 @@
             background: white;
             border-radius: 16px;
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-            line-height: 0;
             transition: background-color 0.3s ease, color 0.3s ease;
         }
 
-        .Titre_Section_photo h1{
+        .Titre_Section_photo h2{
             text-align: center;
             color: #2c7a4b; /* vert principal du site */
             font-size: 5rem;
-            margin-bottom: 50px;
+            margin-top: auto;
+            margin-bottom: auto;
         }
 
 
@@ -260,4 +264,14 @@
         text-align: center;
         padding: 10px;
         font-size: 0.9rem;
+            strong {
+                color: white;
+            }
+
+        nav.footer a {
+        text-decoration:none;
+        color: rgba(255, 255, 255, 0.523);
     }
+    }
+
+    
