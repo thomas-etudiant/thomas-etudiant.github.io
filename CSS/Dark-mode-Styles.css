@@ -1,10 +1,16 @@
-/* --- Base du site --- */
-    body {
-        margin: 0;
-        font-family: "Poppins", sans-serif;
-        background-color: #4A5049; /*Couleur vert Sombre #f8f9fa */
-        color: #333;
-    }
+:root {
+    -bg-color: #ffffff;
+    -text-color: #333333;
+}
+body.dark.mode {
+    -bg-color: #lalala;
+    -text-color: #f0f0f0;
+}
+body {
+    backgroud-color: var(-bg-color);
+    color: var(-text-color);
+    transition: background-color 0.3s, color 0.3s; 
+}
 
 /* --- Section supérieure --- */
     section.top-page {
