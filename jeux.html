@@ -12,89 +12,98 @@
         #result { margin-top: 20px; font-weight: bold; font-size: 1.2rem; }
         button { padding: 10px 20px; font-size: 1rem; cursor: pointer; border-radius: 5px; border: none; background: #27ae60; color: white; }
     </style>
-    <link rel="icon" href="../img/Logo/Logo-T.ico"> <!-- Logo de l'onglet -->
     <link rel="stylesheet" href="../CSS/styles.css">
+    <link rel="icon" href="../img/Logo/Logo-T.ico">
 </head>
-<body>
+    <body>
 
-    <section class="top-page">
-            <header class="header">
-                <img src="..\img\Photo de moi\Photo-perso.webp" alt="Photo de Thomas">
-                <nav class="nav-accueil">
-                    <ul>
-                        <li><a href="../index.html">Accueil</a></li>
-                        <li><a href="../html/À propos.html">À propos</a></li>
-                        <li><a href="../html/Portfolio.html">Portfolio</a></li>
+        <section class="top-page">
+                <header class="header">
+                    <img src="..\img\Photo de moi\Photo-perso.webp" alt="Photo de Thomas">
+                    <nav class="nav-accueil">
+                        <ul>
+                            <li><a href="../index.html">Accueil</a></li>
+                            <li><a href="../html/À propos.html">À propos</a></li>
+                            <li><a href="../html/Portfolio.html">Portfolio</a></li>
 
-                        <li class="dropdown"> <a href="#">Me contacter</a>
-                            <ul class="sous-menu"> 
-                                <li><a href="mailto:fernandes.thomas.etudiant@gmail.com">Par Email</a></li>
-                                <li><a href="sms:+33782980554">Par SMS</a></li>
-                                <li><a href="tel:+33782980554">Par Téléphone</a></li>
-                                <li><a href="https://www.linkedin.com/in/thomas-fernandes-377944303/" target="_blank">Via Linkedin</a></li>
-                            </ul>
-                        </li>
-                        
-                        <li><a href="../Doc/[Fernandes Thomas] CV .pdf" download="Thomas-Fernandes-CV.pdf">Télecharger mon CV</a></li>
-                    </ul>
-                </nav>
-            </header>
-    </section>
+                            <li class="dropdown"> <a href="#">Me contacter</a>
+                                <ul class="sous-menu"> 
+                                    <li><a href="mailto:fernandes.thomas.etudiant@gmail.com">Par Email</a></li>
+                                    <li><a href="sms:+33782980554">Par SMS</a></li>
+                                    <li><a href="tel:+33782980554">Par Téléphone</a></li>
+                                    <li><a href="https://www.linkedin.com/in/thomas-fernandes-377944303/" target="_blank">Via Linkedin</a></li>
+                                </ul>
+                            </li>
+                            
+                            <li><a href="../Doc/[Fernandes Thomas] CV .pdf" download="Thomas-Fernandes-CV.pdf">Télecharger mon CV</a></li>
+                        </ul>
+                    </nav>
+                </header>
+        </section>
 
-    <h1>L'Alchimiste des Couleurs</h1>
-    <p>Trouve le mélange parfait !</p>
+        <h1>L'Alchimiste des Couleurs</h1>
+        <p>Trouve le mélange parfait !</p>
 
-    <div class="game-container">
-        <div><p>Cible</p><div id="targetBox" class="box"></div></div>
-        <div><p>Ta Potion</p><div id="playerBox" class="box"></div></div>
-    </div>
+        <div class="game-container">
+            <div><p>Cible</p><div id="targetBox" class="box"></div></div>
+            <div><p>Ta Potion</p><div id="playerBox" class="box"></div></div>
+        </div>
 
-    <div class="controls">
-        <label>Rouge : <input type="range" id="r" min="0" max="255" value="0"></label>
-        <label>Vert : <input type="range" id="g" min="0" max="255" value="0"></label>
-        <label>Bleu : <input type="range" id="b" min="0" max="255" value="0"></label>
-        <div id="result">Score : 0%</div>
-        <br>
-        <button onclick="resetGame()">Nouvelle Cible</button>
-    </div>
+        <div class="controls">
+            <label>Rouge : <input type="range" id="r" min="0" max="255" value="0"></label>
+            <label>Vert : <input type="range" id="g" min="0" max="255" value="0"></label>
+            <label>Bleu : <input type="range" id="b" min="0" max="255" value="0"></label>
+            <div id="result">Score : 0%</div>
+            <br>
+            <button onclick="resetGame()">Nouvelle Cible</button>
+        </div>
 
-    <script>
-        let target = { r: 0, g: 0, b: 0 };
+        <script>
+            let target = { r: 0, g: 0, b: 0 };
 
-        function resetGame() {
-            // Générer une couleur aléatoire
-            target.r = Math.floor(Math.random() * 256);
-            target.g = Math.floor(Math.random() * 256);
-            target.b = Math.floor(Math.random() * 256);
-            document.getElementById('targetBox').style.backgroundColor = `rgb(${target.r}, ${target.g}, ${target.b})`;
-            update();
-        }
+            function resetGame() {
+                // Générer une couleur aléatoire
+                target.r = Math.floor(Math.random() * 256);
+                target.g = Math.floor(Math.random() * 256);
+                target.b = Math.floor(Math.random() * 256);
+                document.getElementById('targetBox').style.backgroundColor = `rgb(${target.r}, ${target.g}, ${target.b})`;
+                update();
+            }
 
-        function update() {
-            const r = document.getElementById('r').value;
-            const g = document.getElementById('g').value;
-            const b = document.getElementById('b').value;
+            function update() {
+                const r = document.getElementById('r').value;
+                const g = document.getElementById('g').value;
+                const b = document.getElementById('b').value;
 
-            // Appliquer la couleur du joueur
-            document.getElementById('playerBox').style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+                // Appliquer la couleur du joueur
+                document.getElementById('playerBox').style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
 
-            // Calculer la précision (différence mathématique)
-            const diffR = Math.abs(target.r - r);
-            const diffG = Math.abs(target.g - g);
-            const diffB = Math.abs(target.b - b);
-            
-            const totalDiff = (diffR + diffG + diffB) / (255 * 3);
-            const score = Math.max(0, 100 - (totalDiff * 100)).toFixed(1);
+                // Calculer la précision (différence mathématique)
+                const diffR = Math.abs(target.r - r);
+                const diffG = Math.abs(target.g - g);
+                const diffB = Math.abs(target.b - b);
+                
+                const totalDiff = (diffR + diffG + diffB) / (255 * 3);
+                const score = Math.max(0, 100 - (totalDiff * 100)).toFixed(1);
 
-            document.getElementById('result').innerText = `Précision : ${score}%`;
-        }
+                document.getElementById('result').innerText = `Précision : ${score}%`;
+            }
 
-        // Écouter les changements sur les curseurs
-        document.querySelectorAll('input').forEach(input => {
-            input.addEventListener('input', update);
-        });
+            // Écouter les changements sur les curseurs
+            document.querySelectorAll('input').forEach(input => {
+                input.addEventListener('input', update);
+            });
 
-        resetGame(); // Lancer le jeu au chargement
-    </script>
-</body>
+            resetGame(); // Lancer le jeu au chargement
+        </script>
+            <footer>
+                <p>&copy; Thomas Fernandes</p>
+                    <nav class="footer">
+                        <p><strong>Numéro : </strong><a href="tel:+33782980554">07 82 98 05 54</a></p>
+                        <p><strong>Mail : </strong><a href="mailto:fernandes.thomas.etudiant@gmail.com">fernandes.thomas.etudiant@gmail.com</a></p>
+                        <p><strong>Linkedin : </strong><a href="https://www.linkedin.com/in/thomas-fernandes-377944303/" target="_blank">Thomas Fernandes</a></p>
+                    </nav>
+                <!--<p>&copy; 2025 Olive Group</p>-->
+            </footer>
+    </body>
 </html>
