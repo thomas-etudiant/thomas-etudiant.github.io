@@ -1,3 +1,4 @@
+/* --- test ---*/
 :root {
     --bg-color: #ffffff;
     --text-color: #333333;
@@ -12,6 +13,19 @@ body {
     transition: background-color 0.3s, color 0.3s; 
 }
 
+/* --- En-tête --- */
+    .header {
+        display: flex;
+        align-items: center;
+    }
+    /* --- Logo du site [Ma photo]--- */
+        .header img {
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
 /* --- Section supérieure --- */
     section.top-page {
         background-color: #768064; /*#bacfad*/
@@ -22,6 +36,17 @@ body {
         flex-direction: column;
         justify-content: center;
     }
+
+    section.top-page.dark.mode {
+        background-color: #bacfad; /*#768064*/
+        background-size: cover;
+        padding: 25px;
+        min-height: 15vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
 
 /* --- Menu de navigation --- */
     .nav-accueil ul {
