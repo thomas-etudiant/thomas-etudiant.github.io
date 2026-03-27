@@ -1,9 +1,75 @@
+/* --- INTERRUPTEUR --- */
+    /* -- Mode CLAIR par défaut -- */
+        :root {
+            --header-background: #768064; /*Couleur vert clair #f8f9fa */
+            --nav-link: black;
+            --background-site: #Daded8;
+            --background-section: white;
+            --text-main: #333;
+            --text-strong: black;
+            --shadow: rgba(0, 0, 0, 0.08);
+            --footer-background: #333;
+        }
+
+    /* -- Mode Sombre -- */
+        body.dark-mode {
+            --header-background: #2D3326; /* 2F3330 */
+            --nav-link: white;
+            --background-site: #222;
+            --background-section: #333;
+            --text-main: white;
+            --text-strong: white;
+            --shadow: rgba(0, 0, 0, 0.04);
+            --footer-background: #111;
+        }
+
+    /* -- Design de l'intérupteur -- */
+        .switch {
+            position: relative;
+            display: inline-block;
+            width:  46px;
+            height: 24px;
+            margin-left: 0px;
+            vertical-align: middle;
+        }
+
+        .switch input { opacity: 0; width: 0; height: 0; }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: #ccc; /* Gris clair par défaut */
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 16px; 
+            width: 16px;
+            left: 4px; 
+            bottom: 4px;
+            background-color: white; /* Rond blanc à gauche */
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        /* Animation quand on coche (Bascule vers Sombre) */
+        input:checked + .slider { background-color: #444; }
+        input:checked + .slider:before {
+            transform: translateX(22px);
+            background-color: #1a1a1a; /* Rond noir à droite */
+        }
+
 /* --- Base du site --- */
     body {
         margin: 0;
         font-family: "Poppins", sans-serif;
-        background-color: #Daded8; /*Couleur vert clair #f8f9fa */
-        color: #333;
+        background-color: var(--background-site) !important;
+        color: var(--text-main);
+        transition: background-color 0.3s ease, color 0.3s ease;
     }
 
 /* --- En-tête --- */
@@ -13,24 +79,25 @@
     }
     /* --- Logo du site [Ma photo]--- */
         .header img {
-            width: 75px;
-            height: 75px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             object-fit: cover;
         }
 
-/* --- Section supérieure --- */
+/* --- SECTION SUPERIEUR --- */
     section.top-page {
-        background-color: #768064; /*#bacfad*/
+        background-color: var(--header-background) !important; /*#bacfad*/
         background-size: cover;
         padding: 25px;
         min-height: 15vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
+        transition: background-color 0.3s ease;
     }
 
-/* --- Menu de navigation --- */
+/* --- MENU DE NAVIGATION --- */
     .nav-accueil ul {
         display: flex;
         flex-wrap: wrap; /* Permet le retour à la ligne */
@@ -48,7 +115,7 @@
 
     .nav-accueil a {
         text-decoration: none;
-        color: black;
+        color: var(--nav-link);
         font-weight: bold;
         transition: color 0.3s;
     }
@@ -58,6 +125,13 @@
     }
 
         @media (max-width: 768px) {
+
+            .nav-accueil ul {
+                gap: 2px;
+            }
+            .nav-accueil li {
+                margin-left: 15px;
+            }
             section.top-page {
                 min-height: 0vh; /* plus de place sur mobile */
                 padding: 15px;
@@ -84,9 +158,9 @@
     .sous-menu {
         display: none !important;
         position: absolute;
-        background-color: #fff;
+        background-color: var(--background-section);
         list-style: none;
-        border: 1px solid #ccc;
+        border: 1px solid var(--text-main);
         border-radius: 10px; 
     }
 
@@ -107,18 +181,19 @@
 
 
 
-/* --- Section Text --- */
+/* --- SECTION TEXT --- */
     .text {
         padding: 60px 20px;
         max-width: 850px;
         margin: 60px auto;
-        color: #333;
-        background: white;
+        background: var(--background-section) !important;
+        color: var(--text-main);
         border-radius: 16px;
         padding: 40px 50px;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        box-shadow: 0 8px 24px var(--shadow);
         line-height: 1.7;
-        transition: background-color 0.3s ease, color 0.3s ease;
+        transition: all 0.3s ease;
+
     }
 
     .text h2 {
@@ -151,13 +226,13 @@
         padding: 10px 50px;
         max-width: 850px;
         margin: 20px auto;
-        background: white;
+        background: var(--background-section) !important;
         border-radius: 16px;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-        transition: background-color 0.3s ease, color 0.3s ease;
+        box-shadow: 0 8px 24px var(--shadow);
+        transition: all 0.3s ease;
     }
 
-    .Titre h2{
+    .Titre h2, .Titre h3{
         text-align: center;
         color: #2c7a4b; /* vert principal du site */
         font-size: 3rem;
@@ -165,16 +240,19 @@
         margin-bottom: auto;
     }
 
-    .Titre h3{
-        text-align: center;
-        color: #2c7a4b; /* vert principal du site */
-        font-size: 3rem;
-        margin-top: auto;
-        margin-bottom: auto;
-    }
+    .text a {
+        color: #2c7a4b;
+        font-weight: bold;
+        text-decoration: underline;
+        transition: all 0.3s ease;
+        }
+            .text a:hover {
+                color: #768064;
+                opacity: 0.8;
+            }
 
     strong {
-        color: #1a1a1a;
+        color: var(--text-strong);
     }
     /* --- Mode responsive --- */
         /* -- Optimisation mobile -- */
@@ -211,7 +289,7 @@
                     padding: 10px 15px;
                 }
             }
-/* ---  Portfolio ---*/
+/* ---  PORTFOLIO ---*/
     /*-- Section Photo --*/
 
         .photo {
@@ -240,7 +318,7 @@
             .photo figcaption {
                 margin-top: 8px;
                 font-size: 0.9rem;
-                color: #333;
+                color: var(--text-main);
                 text-align: center;
                 font-style: italic;
             }
@@ -302,9 +380,9 @@
                 box-shadow: 0 4px 10px rgba(0,0,0,0.2);
             }
 
-/* --- Pied de page --- */
+/* --- PIED DE PAGE --- */
     footer {
-        background-color: #333;
+        background-color: var(--footer-background);
         color: white;
         text-align: center;
         padding: 10px;

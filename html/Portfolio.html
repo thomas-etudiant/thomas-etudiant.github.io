@@ -11,8 +11,9 @@
     <body>
         <section class="top-page">
             <header class="header">
-                <img src="..\img\Photo de moi\Photo-perso.webp" alt="Photo de Thomas">
-                <nav class="nav-accueil">
+                <div class="header-brand">
+                    <img src="..\img\Photo de moi\Photo-perso.webp" alt="Photo de Thomas">
+                </div>                <nav class="nav-accueil">
                     <ul>
                         <li><a href="../index.html">Accueil</a></li>
                         <li><a href="../html/À propos.html">À propos</a></li>
@@ -24,10 +25,18 @@
                                 <li><a href="sms:+33782980554">Par SMS</a></li>
                                 <li><a href="tel:+33782980554">Par Téléphone</a></li>
                                 <li><a href="https://www.linkedin.com/in/thomas-fernandes-377944303/" target="_blank">Via Linkedin</a></li>
+                                <li><a href="https://github.com/thomas-etudiant" target="_blank">Via GitHub</a></li>
                             </ul>
                         </li>
+                        
+                        <li><a href="../Doc/[Fernandes Thomas] CV.pdf" target="_blank" class="btn-pdf">Mon CV</a></li>
 
-                        <li><a href="../Doc/[Fernandes Thomas] CV .pdf" download="Thomas-Fernandes-CV.pdf">Télecharger mon CV</a></li>
+                        <li class="nav-toggle">
+                                <label class="switch" for="theme-toggle">
+                                    <input type="checkbox" id="theme-toggle">
+                                    <span class="slider"></span>
+                                </label>
+                        </li>
                     </ul>
                 </nav>
             </header>
@@ -112,7 +121,7 @@
                 </figure>
 
                 <figure>
-                    <img src="../img/DSC_0532.JPG" alt="Gros plan d'un chaton gris aux yeux clairs posé sur un support sombre dans un intérieur lumineux. height="300">
+                    <img src="../img/DSC_0532.JPG" alt="Gros plan d'un chaton gris aux yeux clairs posé sur un support sombre dans un intérieur lumineux." height="300">
                     <figcaption>Regard de Velours</figcaption>
                 </figure>
 
@@ -232,5 +241,6 @@
                 </nav>
             <!--<p>&copy; 2025 Olive Group</p>-->
         </footer>
+        <script src="../Java/Java.JS"></script>
     </body>
 </html>

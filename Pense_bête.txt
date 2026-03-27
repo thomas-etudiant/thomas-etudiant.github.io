@@ -5,3 +5,5 @@
     git commit -m "modification portfolio photo"    <*-- Nom de la modification -->
 
     git push                                        <*-- Envoi des fichiers sur le serveur -->
+
+    git pull                                        <*-- récuper des fichiers sur le serveur -->

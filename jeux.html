@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>L'Alchimiste des Couleurs</title>
     <style>
-        body { font-family: sans-serif; text-align: center; background: #222; color: white; }
+        body { font-family: sans-serif; text-align: center; background: var(--bg-main); color: white; }
         .game-container { display: flex; justify-content: center; gap: 20px; margin-top: 50px; }
         .box { width: 150px; height: 150px; border-radius: 15px; border: 4px solid #fff; }
         .controls { margin-top: 30px; display: flex; flex-direction: column; align-items: center; }
@@ -12,8 +12,8 @@
         #result { margin-top: 20px; font-weight: bold; font-size: 1.2rem; }
         button { padding: 10px 20px; font-size: 1rem; cursor: pointer; border-radius: 5px; border: none; background: #27ae60; color: white; }
     </style>
-    <link rel="stylesheet" href="../CSS/styles.css">
-    <link rel="icon" href="../img/Logo/Logo-T.ico">
+    <link rel="icon" href="../img/Logo/Logo-T.ico"> <!-- Logo de l'onglet -->
+    <link rel="stylesheet" href="../CSS/Dark-mode-Styles.css">
 </head>
     <body>
 
@@ -26,20 +26,28 @@
                             <li><a href="../html/À propos.html">À propos</a></li>
                             <li><a href="../html/Portfolio.html">Portfolio</a></li>
 
-                            <li class="dropdown"> <a href="#">Me contacter</a>
-                                <ul class="sous-menu"> 
-                                    <li><a href="mailto:fernandes.thomas.etudiant@gmail.com">Par Email</a></li>
-                                    <li><a href="sms:+33782980554">Par SMS</a></li>
-                                    <li><a href="tel:+33782980554">Par Téléphone</a></li>
-                                    <li><a href="https://www.linkedin.com/in/thomas-fernandes-377944303/" target="_blank">Via Linkedin</a></li>
-                                </ul>
+                        <li class="dropdown"> <a href="#">Me contacter</a>
+                            <ul class="sous-menu"> 
+                                <li><a href="mailto:fernandes.thomas.etudiant@gmail.com">Par Email</a></li>
+                                <li><a href="sms:+33782980554">Par SMS</a></li>
+                                <li><a href="tel:+33782980554">Par Téléphone</a></li>
+                                <li><a href="https://www.linkedin.com/in/thomas-fernandes-377944303/" target="_blank">Via Linkedin</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li><a href="../Doc/[Fernandes Thomas] CV .pdf" download="Thomas-Fernandes-CV.pdf">Télecharger mon CV</a></li>
+                        <li>
+                            <li class="nav-toggle">
+                                <label class="switch" for="theme-toggle">
+                                    <input type="checkbox" id="theme-toggle">
+                                    <span class="slider"></span>
+                                </label>
                             </li>
-                            
-                            <li><a href="../Doc/[Fernandes Thomas] CV .pdf" download="Thomas-Fernandes-CV.pdf">Télecharger mon CV</a></li>
-                        </ul>
-                    </nav>
-                </header>
-        </section>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+    </section>
 
         <h1>L'Alchimiste des Couleurs</h1>
         <p>Trouve le mélange parfait !</p>
@@ -105,5 +113,6 @@
                     </nav>
                 <!--<p>&copy; 2025 Olive Group</p>-->
             </footer>
+        <script src="../Java/Java.JS"></script>
     </body>
 </html>
