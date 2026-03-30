@@ -158,25 +158,35 @@
 
                 <section class="photo">
                     <figure>
-                        <img src="../Doc/Villa Savoye/n°1 Architecte.jpg" alt="Planche de présentation sur Le Corbusier et l'inscription de la Villa Savoye à l'UNESCO.">
+                        <img src="../Doc/Villa Savoye/n°1 Architecte.jpg" alt="Planche de présentation sur Le Corbusier et l'inscription de la Villa Savoye à l'UNESCO." class="img-clickable" onclick="OpenImg(this.src)">
                         <figcaption>Biographie de Le Corbusier et contexte historique.</figcaption>
                     </figure>
+                    
                     <figure>
-                        <img src="../Doc/Villa Savoye/n°2 Villa Savoye.jpg" alt="Photographie et texte d'introduction présentant l'architecture moderne de la Villa Savoye.">
+                        <img src="../Doc/Villa Savoye/n°2 Villa Savoye.jpg" alt="Photographie et texte d'introduction présentant l'architecture moderne de la Villa Savoye." class="img-clickable" onclick="OpenImg(this.src)">
                         <figcaption>Présentation générale du projet Villa Savoye.</figcaption>
                     </figure>
+
                     <figure>
-                        <img src="../Doc/Villa Savoye/n°3 Plans.jpg" alt="Plans techniques détaillés du Rez-de-chaussée et des étages de la Villa Savoye.">
+                        <img src="../Doc/Villa Savoye/n°3 Plans.jpg" alt="Plans techniques détaillés du Rez-de-chaussée et des étages de la Villa Savoye." class="img-clickable" onclick="OpenImg(this.src)">
                         <figcaption>Organisation spatiale et plans de niveaux.</figcaption>
                     </figure>
+
                     <figure>
-                        <img src="../Doc/Villa Savoye/n°4 Elévations.jpg" alt="Dessins techniques des élévations Sud-Est, Nord-Est et Nord-Ouest du bâtiment.">
+                        <img src="../Doc/Villa Savoye/n°4 Elévations.jpg" alt="Dessins techniques des élévations Sud-Est, Nord-Est et Nord-Ouest du bâtiment. "class="img-clickable" onclick="OpenImg(this.src)">
                         <figcaption>Vues de façades et élévations architecturales.</figcaption>
                     </figure>
+
                     <figure>
-                        <img src="../Doc/Villa Savoye/n°5 Coupes.jpg" alt="Coupes transversales A-A et B-B accompagnées de perspectives 3D intérieures">
+                        <img src="../Doc/Villa Savoye/n°5 Coupes.jpg" alt="Coupes transversales A-A et B-B accompagnées de perspectives 3D intérieures" class="img-clickable" onclick="OpenImg(this.src)">
                         <figcaption>Détails constructifs et coupes de principe.</figcaption>
                     </figure>
+
+                    <dialog id="modalGenerique" class="modal-zoom" onclick="this.close()">
+                        <img src="" id="imageAgrandie">
+                        <p>Cliquez pour fermer</p>
+                    </dialog>
+
                 </section>
 
                 <!-- Vidéo Villa Savoye -->

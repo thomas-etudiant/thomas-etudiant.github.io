@@ -325,7 +325,7 @@
             }
 
             /* --- Mode responsive --- */
-                @media (max-width: 768px) {
+                @media (max-width: 600px) {
                     .photo {
                         display: flex;
                         overflow-x: auto; /* defilement horizontal */
@@ -430,3 +430,79 @@
                 height: 40px;
             }
         }
+
+
+    /* Style de l'image sur la page */
+        .img-clickable {
+        cursor: zoom-in;
+        transition: transform 0.3s ease;
+        }
+
+        .img-clickable:hover {
+        transform: scale(1.05); /* Petit effet de survol */
+        }
+
+        /* Style de l'image agrandie (le Dialog) */
+            .modal-zoom {
+                border: none;
+                background: rgba(0, 0, 0, 0.85);
+                padding: 20px;
+                margin: auto;
+                overflow-y: auto; /* Empêche les barres de défilement blanches */
+                overflow-x: hidden;
+                outline: none;
+            }
+
+            /* Masquage de la barre */
+                /* Chrome / Safari / Opera */
+                .modal-zoom::-webkit-scrollbar {
+                    display: none;
+                }
+
+                /* IE / Edge / Firefox  */
+                .modal-zoom {
+                    -ms-overflow-style: none;  /* IE & Edge */
+                    scrollbar-width: none;  /* Firefox */
+                }
+
+        /* Force l'image à s'adapter à l'écran sans dépasser */
+            .modal-zoom img {
+                display: block;
+                margin: auto; 
+                width: 90%;
+                height: auto;
+                border: 2px solid var(--background-site);
+                border-radius: 8px;
+            }
+
+        /* Texte sous l'image */
+            .modal-zoom p {
+                color: white;
+                text-align: center;
+                font-size: 0.9rem;
+                margin-top: 10px;
+            }
+
+                @media (max-width: 768px){
+                    .modal-zoom {
+                        width: 100vw;      /* Prend toute la largeur de l'écran */
+                        height: 100vh;     /* Prend toute la hauteur de l'écran */
+                        max-height: 100vh;
+                    }
+
+                    .modal-zoom img {
+                        padding: 0px;
+                        width: 90vw;      /* L'image colle aux bords gauche/droite */
+                        border: none;      /* On enlève la bordure blanche qui prend de la place */
+                        align-items: center;
+                        padding-top: 20px;
+                    }
+                    
+                    .modal-zoom p {
+                        font-weight: bold;
+                        padding: 15px;
+                    }
+                    .img-clickable:hover {
+                        transform: scale(1.02); /* Effet de survol */
+                    }
+                }

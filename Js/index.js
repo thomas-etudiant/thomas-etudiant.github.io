@@ -45,3 +45,29 @@
       behavior: 'smooth' // Remontée fluide et smoth
     });
   }
+
+  //Clik open - Ouvrie l'image
+    function OpenImg(source) {
+      const modal = document.getElementById('modalGenerique');
+      const imgModale = document.getElementById('imageAgrandie');
+        imgModale.src = source;
+        modal.showModal();
+
+        document.body.style.overflow = 'hidden'; // Bloque le scroll du site en arrière plan
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('modalGenerique').modal.close();
+    }
+
+    // Réactive le scroll du site
+    document.getElementById('modalGenerique').addEventListener('close', () => {
+        document.body.style.overflow = 'auto';
+    });
+
+    // Gérer la touche "Echap" qui ferme le modal par défaut
+    document.addEventListener('keydown', (e) => {
+        if (e.key === "Escape") {
+            document.body.style.overflow = 'auto';
+        }
+    });
