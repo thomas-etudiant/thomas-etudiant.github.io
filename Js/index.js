@@ -47,7 +47,7 @@
   }
 
   //Clik open - Ouvrie l'image
-    function OpenImg(source) {
+    function openImg(source) {
       const modal = document.getElementById('modalGenerique');
       const imgModale = document.getElementById('imageAgrandie');
         imgModale.src = source;
